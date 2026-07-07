@@ -216,6 +216,7 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
 
 /* ---- drawer ---- */
 .drawer{position:fixed;inset:0;z-index:20;display:flex;justify-content:flex-end}
+.drawer[hidden]{display:none}  /* the [hidden] attr must win over display:flex, or the empty panel covers the page */
 .drawer-scrim{position:absolute;inset:0;background:oklch(0.1 0 0 / 0.45);animation:fade .2s}
 .drawer-panel{position:relative;width:min(560px,92vw);height:100%;background:var(--paper);border-left:1px solid var(--ink);
   overflow-y:auto;padding:clamp(24px,4vw,44px);animation:slidein .32s cubic-bezier(.2,.8,.2,1)}
