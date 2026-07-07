@@ -88,11 +88,12 @@ button{font-family:inherit;cursor:pointer;background:none;border:none;color:inhe
   padding:11px var(--edge);border-bottom:1px solid var(--line-2);background:var(--paper)}
 .rail .sep{margin:0 .5em;color:var(--ink-faint)}
 .rail-r{display:flex;align-items:center;gap:20px}
-.theme-btn{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line-2);padding:5px 10px}
-.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
-.th-dot{width:9px;height:9px;background:var(--ink);display:inline-block;transition:background .3s}
-.theme-btn:hover .th-dot{background:var(--accent)}
-:root[data-theme="dark"] .th-dot{background:var(--paper);border:1px solid var(--ink)}
+.theme-btn{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;padding:0;border:none;color:var(--ink-soft);transition:color .15s}
+.theme-btn:hover{color:var(--accent)}
+.theme-btn .ic{display:none}
+.theme-btn .ic-moon{display:block}
+:root[data-theme="dark"] .theme-btn .ic-moon{display:none}
+:root[data-theme="dark"] .theme-btn .ic-sun{display:block}
 
 .wrap{padding:0 var(--edge)}
 

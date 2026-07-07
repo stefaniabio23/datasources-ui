@@ -270,7 +270,7 @@ $$(".sort-btn").forEach(b => b.onclick = () => { $$(".sort-btn").forEach(x => x.
 
 /* theme */
 const tt = $("#theme-toggle");
-function syncTheme() { $("#theme-label").textContent = document.documentElement.getAttribute("data-theme") === "dark" ? "DARK" : "LIGHT"; }
+function syncTheme() { /* sun/moon icon swaps via CSS on [data-theme] */ }
 tt.onclick = () => {
   const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
   document.documentElement.setAttribute("data-theme", next);
