@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datasources — a registry of datasets for agents, research &amp; diligence</title>
+<meta name="description" content="An agent-readable registry of public and private datasets, APIs and databases with canonical join keys. The schema is the interface.">
+<meta property="og:title" content="Datasources — the registry">
+<meta property="og:description" content="A registry of datasets for agents, research and diligence. The schema is the interface.">
+<meta name="theme-color" content="#f6f4ef">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23f6f4ef'/%3E%3Ccircle cx='8' cy='11' r='2.6' fill='%23d8451f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://raw.githubusercontent.com">
+<link rel="stylesheet" href="styles.css">
+<script>/* set theme before paint to avoid flash */
+(function(){try{var t=localStorage.getItem('ds-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+</script>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- top rail -->
+<header class="rail">
+  <div class="rail-l"><span class="mono">DATASOURCES</span><span class="sep">/</span><span class="mono dim">THE REGISTRY</span></div>
+  <div class="rail-r">
+    <a class="mono link" id="repo-link" href="https://github.com/stefaniabio23/datasources" target="_blank" rel="noopener">SOURCE ↗</a>
+    <button class="theme-btn mono" id="theme-toggle" aria-label="Toggle theme"><span class="th-dot"></span><span id="theme-label">LIGHT</span></button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- masthead -->
+  <section class="masthead">
+    <div class="mast-vol mono">VOL.01 <span class="dim">— PUBLIC REGISTRY</span></div>
+    <h1 class="wordmark">Datasources<span class="dot">.</span></h1>
+    <p class="tagline">A registry of public and private datasets, APIs and databases for agents, research and diligence. <em>The schema is the interface.</em></p>
+    <div class="stats mono" id="stats">
+      <span class="stat"><b id="s-sources">—</b> SOURCES</span>
+      <span class="stat"><b id="s-keys">—</b> JOIN KEYS</span>
+      <span class="stat"><b id="s-domains">—</b> DOMAINS</span>
+      <span class="stat dim">MIRRORED FROM GITHUB</span>
+      <span class="stat dim" id="s-built">BUILT —</span>
+    </div>
+  </section>
+
+  <!-- search -->
+  <section class="search">
+    <label class="src-label mono" for="q">SEARCH THE REGISTRY</label>
+    <div class="src-field">
+      <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Find datasets, join keys, APIs, MCPs…">
+      <span class="src-count mono" id="q-count"></span>
+    </div>
+    <div class="src-try mono dim">TRY:
+      <button class="chip-try" data-q="DOI">DOI to patents</button> ·
+      <button class="chip-try" data-q="NCT_ID">clinical trials</button> ·
+      <button class="chip-try" data-q="free biotech">free biotech APIs</button> ·
+      <button class="chip-try" data-q="mcp-exists">has an MCP</button>
+    </div>
+  </section>
+
+  <!-- controls -->
+  <section class="controls">
+    <div class="ctrl-views mono">
+      <span class="ctrl-lbl dim">VIEW</span>
+      <button class="view-btn is-active" data-view="table">table</button>
+      <button class="view-btn" data-view="cards">cards</button>
+      <button class="view-btn" data-view="joinmap">join map</button>
+      <button class="view-btn" data-view="schema">schema</button>
+    </div>
+    <div class="ctrl-sort mono">
+      <span class="ctrl-lbl dim">SORT</span>
+      <button class="sort-btn is-active" data-sort="priority">priority</button>
+      <button class="sort-btn" data-sort="name">name</button>
+      <button class="sort-btn" data-sort="domain">domain</button>
+      <button class="sort-btn" data-sort="verified">verified</button>
+    </div>
+    <div class="ctrl-count mono" id="result-count">— RESULTS</div>
+  </section>
+
+  <!-- domain filter -->
+  <section class="filters mono" id="domain-filters"></section>
+
+  <!-- views -->
+  <section class="views">
+    <div id="view-table" class="view is-active"></div>
+    <div id="view-cards" class="view"></div>
+    <div id="view-joinmap" class="view"></div>
+    <div id="view-schema" class="view"></div>
+    <div id="empty" class="empty mono" hidden>NO SOURCES MATCH — clear the search or filters.</div>
+    <div id="loading" class="loading mono">LOADING REGISTRY<span class="blink">_</span></div>
+    <div id="error" class="err mono" hidden></div>
+  </section>
+
+</main>
+
+<footer class="foot mono">
+  <div class="foot-l">DATASOURCES REGISTRY — <span id="f-count">—</span> SOURCES · MIRRORED FROM <a class="link" href="https://github.com/stefaniabio23/datasources" target="_blank" rel="noopener">stefaniabio23/datasources</a></div>
+  <div class="foot-r dim">The schema is the interface.</div>
+</footer>
+
+<!-- row detail drawer -->
+<div class="drawer" id="drawer" hidden>
+  <div class="drawer-scrim" data-close></div>
+  <aside class="drawer-panel" id="drawer-panel" role="dialog" aria-modal="true"></aside>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
