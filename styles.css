@@ -18,7 +18,7 @@
 :root{
   --font-display:"NHG Display","Helvetica Neue",Helvetica,Arial,sans-serif;
   --font-text:"NHG Text","Helvetica Neue",Helvetica,Arial,sans-serif;
-  --font-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --font-mono:"NHG Text","Helvetica Neue",Helvetica,Arial,sans-serif; /* all-Neue-Haas: labels/data use NHG, not a monospace */
   --gap:clamp(16px,3.2vw,40px);
   --edge:clamp(16px,4vw,64px);
   --dur:0.5s;
@@ -72,7 +72,7 @@ body{
 ::-webkit-scrollbar-thumb:hover{background:var(--accent)}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-.mono{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;font-weight:400}
+.mono{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;font-weight:500;font-variant-numeric:tabular-nums}
 .dim{color:var(--ink-faint)}
 .link{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line-2)}
 .link:hover{color:var(--accent);border-color:var(--accent)}
